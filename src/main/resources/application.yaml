@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+
+  primary-datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      cachePrepStmts: true
+      connectionTestQuery: SELECT CURRENT_TIMESTAMP
+      connectionTimeout: 3000
+      maximumPoolSize: 3
+      minimumIdle: 1
+      prepStmtCacheSize: 250
+      prepStmtCacheSqlLimit: 2048
+      useServerPrepStmts: true
+      validationTimeout: 250
+    username: postgres
+    password: abcd1234
+    type: com.zaxxer.hikari.HikariDataSource
+    jdbc-url: jdbc:postgresql://localhost:5432/postgres
+
+server:
+  port : 8090
+  servlet:
+    context-path: /index
